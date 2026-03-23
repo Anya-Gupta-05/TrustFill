@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Security Assessment</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 40px auto; padding: 20px; background-color: #f9fafb; }
+        .container { background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h1 { color: #1e3a8a; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; }
+        h2 { color: #2563eb; margin-top: 30px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        textarea, input[type="text"], select { width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 4px; font-family: inherit; }
+        textarea { height: 100px; resize: vertical; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #d1d5db; padding: 12px; text-align: left; }
+        th { background-color: #1f2937; color: white; }
+        .radio-group { display: flex; gap: 15px; margin-top: 5px; }
+        .radio-group label { font-weight: normal; display: flex; align-items: center; gap: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cloud Vendor Security Questionnaire</h1>
+        <p>Please complete all 10 security controls below. TrustFill AI should be able to navigate the varying formats.</p>
+
+        <form id="security-form">
+            <h2>Part 1: Access & Encryption (Descriptive)</h2>
+            
+            <div class="form-group">
+                <label for="q1_dr">1. Describe your Disaster Recovery (DR) and Business Continuity Plan (BCP).</label>
+                <textarea id="q1_dr"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="q2_enc">2. Detail the encryption algorithms and key management processes used for Data at Rest and Data in Transit.</label>
+                <textarea id="q2_enc"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="q3_offboard">3. Explain your employee offboarding process, specifically regarding the revocation of access to production servers.</label>
+                <textarea id="q3_offboard"></textarea>
+            </div>
+
+            <h2>Part 2: Compliance Controls (Table Format)</h2>
+            <table>
+                <tr>
+                    <th>Control ID</th>
+                    <th>Question</th>
+                    <th>Vendor Response</th>
+                </tr>
+                <tr>
+                    <td>TVM-01.1</td>
+                    <td>Do you have a documented vulnerability management policy?</td>
+                    <td>
+                        <select id="tvm_01">
+                            <option value="">Select an answer...</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TVM-02.1</td>
+                    <td>Are third-party penetration tests conducted at least annually?</td>
+                    <td><input type="text" id="tvm_02" placeholder="Provide details..."></td>
+                </tr>
+                <tr>
+                    <td>INC-01.1</td>
+                    <td>What is your Service Level Agreement (SLA) for notifying customers of a confirmed data breach?</td>
+                    <td><textarea id="inc_01" style="height: 50px;"></textarea></td>
+                </tr>
+            </table>
+
+            <h2>Part 3: Identity & Architecture (Radio Buttons)</h2>
+            
+            <div class="form-group">
+                <label>7. Is Multi-Factor Authentication (MFA) strictly enforced for all administrative access to the cloud environment?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="mfa_enforced" value="Yes"> Yes</label>
+                    <label><input type="radio" name="mfa_enforced" value="No"> No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>8. Are production environments logically or physically separated from development and testing environments?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="env_sep" value="Yes"> Yes</label>
+                    <label><input type="radio" name="env_sep" value="No"> No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>9. Do you utilize a dedicated Web Application Firewall (WAF) to protect public-facing endpoints?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="waf_used" value="Yes"> Yes</label>
+                    <label><input type="radio" name="waf_used" value="No"> No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="q10_arch">10. Briefly describe your infrastructure architecture (e.g., AWS, multi-AZ, microservices).</label>
+                <textarea id="q10_arch"></textarea>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { width: 320px; padding: 15px; font-family: Arial, sans-serif; text-align: center; }
+        button { background: #0070f3; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; width: 100%; font-weight: bold; margin-bottom: 10px;}
+        button:hover { background: #005bb5; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+        #autofill-btn { background: #10b981; display: none; } /* Hidden initially */
+        #autofill-btn:hover { background: #059669; }
+        #status { font-size: 14px; color: #555; margin-bottom: 10px; }
+        #progress { font-size: 13px; color: #d97706; font-weight: bold; height: 20px;}
+    </style>
+</head>
+<body>
+    <h2>🛡️ TrustFill</h2>
+    <div id="status">Ready to scan the page.</div>
+    
+    <button id="scan-btn">1. Scan Form</button>
+    <div style="margin-bottom: 10px;">
+    <label for="manager-email" style="font-size: 12px; font-weight: bold;">Manager's Email:</label>
+    <input type="email" id="manager-email" placeholder="boss@company.com" style="width: 100%; padding: 5px; margin-top: 3px;" />
+</div>
+    <button id="autofill-btn">2. Start Auto-Fill 🚀</button>
+    <button id="clear-btn" style="background-color: #ef4444; color: white; border: none; padding: 8px; width: 100%; margin-bottom: 10px; border-radius: 4px; font-weight: bold; cursor: pointer;">
+    🗑️ Clear Memory & Reset Form
+</button>
+    
+    <div id="progress"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

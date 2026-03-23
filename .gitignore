@@ -1,0 +1,18 @@
+# Security
+**/.env
+
+# Virtual Environments 
+**/venv/
+**/.venv/
+**/env/
+
+# Databases
+**/chroma_data/
+**/*.sqlite3
+
+# Python Caches
+**/__pycache__/
+**/*.pyc
+
+# Mac System Files
+**/.DS_Store
