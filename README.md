@@ -39,11 +39,59 @@ This project utilizes a **decoupled architecture**, separating the browser-based
 
 ### 1. Start the Python Backend
 
-Clone this repository to your machine.
+### 2.Clone this repository to your machine.
 
-Open the terminal and navigate to the backend folder.
+### 3.Open the terminal and navigate to the backend folder.
 
 Create a virtual environment and install the dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+
+### 4. Create a `.env` File
+
+Create a `.env` file in the root of the backend directory and add your API credentials:
+
+```bash
+GEMINI_API_KEY="your_gemini_key"
+GROQ_API_KEY="your_groq_key"
+SENDER_EMAIL="your_bot_email@gmail.com"
+SENDER_PASSWORD="your_16_letter_app_password"
+```
+
+### 5.Start the FastAPI Server
+```bash
+fastapi dev main.py
+```
+
+## 2. Install the Chrome Extension
+
+1. Open Google Chrome and navigate to `chrome://extensions/`  
+2. Toggle **Developer mode** ON in the top right corner  
+3. Click **Load unpacked** in the top left  
+4. Select the extension folder from this repository  
+
+The TrustFill shield icon will now appear in your browser toolbar.
+
+---
+
+## 3. Try the Live Demo
+
+You can test the AI extraction on the official TrustFill Benchmark Form here:
+
+👉 **Launch the TrustFill Test Bench**
+
+---
+
+## 📐 Architectural Note on DOM Scraping Scope
+
+The core innovation of TrustFill lies in its **Retrieval-Augmented Generation (RAG)** pipeline and LLM chaining.
+
+Currently, the frontend DOM scraper is optimized for standard HTML5 architecture and semantic form elements (`<input>`, `<select>`, `<textarea>`, and standard radio groupings).
+Because modern enterprise web portals often utilize highly obfuscated, proprietary UI frameworks or custom `<div>`-based pseudo-elements (such as Google Forms’ custom blocks), extracting targets from unstandardized “junk” HTML falls outside the scope of this iteration.
+To demonstrate the end-to-end AI capabilities cleanly, a standardized benchmark form (linked above) was developed.
+Future scale iterations would involve implementing **Computer Vision models** to bypass DOM scraping entirely, allowing the AI to “see” and interact with non-standard web elements visually.
+
+#Developed by Anya Gupta
