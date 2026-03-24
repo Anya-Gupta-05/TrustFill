@@ -81,8 +81,7 @@ The TrustFill shield icon will now appear in your browser toolbar.
 
 You can test the AI extraction on the official TrustFill Benchmark Form here:
 
-👉 **Launch the TrustFill Test Bench**
-
+👉 **[Launch the TrustFill Test Bench](https://anya-gupta-05.github.io/Trust-Fill-Test-Branch/)**
 ---
 
 ## 📐 Architectural Note on DOM Scraping Scope
